@@ -5,9 +5,9 @@
 #+OPTIONS: num:nil
 #+OPTIONS: toc:nil reveal_mathjax:t
 
-#+REVEAL_ROOT: http://cdn.jsdelivr.net/reveal.js/2.5.0/
-#+REVEAL_ROOT: http://cdn.jsdelivr.net/reveal.js/2.5.0/
 #+REVEAL_ROOT: file:///home/anand/.emacs.d/vendor/reveal.js/
+#+REVEAL_ROOT: http://cdn.jsdelivr.net/reveal.js/2.5.0/
+
 
 #+REVEAL_TRANS: linear
 #+REVEAL-SLIDE-NUMBER: t
@@ -16,7 +16,7 @@
 #+BIND: org-confirm-babel-evaluate nil
 
 
-* Enough Ipython For Every Day Programming
+* Enough iPython For Everyday Programming
 
 
 * Python Interpreter
