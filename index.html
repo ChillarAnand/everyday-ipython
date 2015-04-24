@@ -1,0 +1,532 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>index</title>
+<meta name="author" content="(Anand Reddy Pandikunta)"/>
+
+<link rel="stylesheet" href="file:///home/anand/.emacs.d/vendor/reveal.js/css/reveal.css"/>
+<link rel="stylesheet" href="file:///home/anand/.emacs.d/vendor/reveal.js/css/theme/simple.css" id="theme"/>
+
+<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+<script>
+    if( window.location.search.match( /print-pdf/gi ) ) {
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = 'file:///home/anand/.emacs.d/vendor/reveal.js/css/print/pdf.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+    }
+</script>
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</head>
+<body>
+
+<div class="reveal">
+<div id="speaker">
+
+        <div class='footer'>
+          <span>Anand Reddy Pandikunta (@chillaranand)</span>
+          <a href="http://www.avilpage.com">http://avilpage.com</a>
+        </div>
+        <style>
+         .reveal .footer {
+           position: absolute;
+           bottom: 1em;
+           left: 1em;
+           font-size: 0.5em;
+         }
+        </style>
+
+      </div>
+
+<div class="slides">
+
+
+
+<section>
+<section id="sec-1" >
+
+<h3>Enough iPython For Everyday Programming</h3>
+</section>
+
+
+</section>
+<section>
+<section id="sec-2" >
+
+<h2>Python Interpreter</h2>
+<p>
+Meh&#x2026; Not interesting&#x2026;
+</p>
+</section>
+
+
+
+</section>
+<section>
+<section id="sec-3" >
+
+<h2>iPython</h2>
+<div class="org-src-container">
+
+<pre  class="src src-sh">pip install ipython
+sudo apt-get install ipython  <span style="color: #b22222;"># </span><span style="color: #b22222;">ubuntu</span>
+
+ipython
+</pre>
+</div>
+
+<p>
+Welcome to iPython!!
+</p>
+</section>
+
+
+
+</section>
+<section>
+<section id="sec-4" >
+
+<h2>Basics</h2>
+<p>
+Command Line Help
+</p>
+
+<div class="org-src-container">
+
+<pre  class="src src-sh">ipython -h
+</pre>
+</div>
+
+
+<p>
+Interactive Help: 
+</p>
+
+<div class="org-src-container">
+
+<pre  class="src src-python">?
+%quickref
+<span style="color: #483d8b;">help</span>()
+<span style="color: #483d8b;">object</span>?
+<span style="color: #483d8b;">object</span>??
+</pre>
+</div>
+</section>
+
+
+
+</section>
+<section>
+<section id="sec-5" >
+
+<h2>Tab completion</h2>
+<div class="org-src-container">
+
+<pre  class="src src-python">In [23]: <span style="color: #a020f0;">import</span> itertools
+
+In [24]: itertools.
+itertools.chain                          itertools.groupby 
+itertools.combinations                   itertools.ifilter 
+itertools.combinations_with_replacement  itertools.ifilterfalse
+</pre>
+</div>
+</section>
+
+
+
+</section>
+<section>
+<section id="sec-6" >
+
+<h2>Shell Commands</h2>
+<div class="org-src-container">
+
+<pre  class="src src-python">In [15]: <span style="color: #a0522d;">files</span> = !ls
+
+In [16]: files
+Out[16]: [<span style="color: #8b2252;">'demo_script.py'</span>, <span style="color: #8b2252;">'ipy'</span>, <span style="color: #8b2252;">'ipy.html'</span>, <span style="color: #8b2252;">'ipy.org'</span>]
+</pre>
+</div>
+</section>
+
+
+
+</section>
+<section>
+<section id="sec-7" >
+
+<h2>Magics</h2>
+</section>
+
+
+
+</section>
+<section>
+<section id="sec-8" >
+
+<h2>History</h2>
+<div class="org-src-container">
+
+<pre  class="src src-python">In [25]: 56 * 8903
+Out[25]: 498568
+
+In [26]: _ * 12
+Out[26]: 5982816
+
+In [27]: _ + 1
+Out[27]: 5982817
+
+In [28]: %hist
+</pre>
+</div>
+</section>
+
+
+
+</section>
+<section>
+<section id="sec-9" >
+
+<h2>%lsmagic</h2>
+<div class="org-src-container">
+
+<pre  class="src src-python">In [3]: %lsmagic
+Out[3]: 
+Available line magics:
+%aimport  %alias  %alias_magic  %autocall  %autoindent  %automagic
+
+Available cell magics:
+%%!  %%HTML  %%SVG  %%bash  %%capture  %%debug  %%<span style="color: #483d8b;">file</span>  %%html 
+
+Automagic <span style="color: #a020f0;">is</span> ON, % prefix IS NOT needed <span style="color: #a020f0;">for</span> line magics.
+</pre>
+</div>
+</section>
+
+
+
+</section>
+<section>
+<section id="sec-10" >
+
+<h2>%automagic</h2>
+<div class="org-src-container">
+
+<pre  class="src src-python">In [4]: %automagic
+
+Automagic <span style="color: #a020f0;">is</span> OFF, % prefix IS needed <span style="color: #a020f0;">for</span> line magics.
+</pre>
+</div>
+</section>
+
+
+
+</section>
+<section>
+<section id="sec-11" >
+
+<h2>%colors</h2>
+<div class="org-src-container">
+
+<pre  class="src src-python">In [5]: %colors
+UsageError: %colors: you must specify a color scheme. See <span style="color: #8b2252;">'%colors?'</span>
+
+In [6]: %colors lightbg
+</pre>
+</div>
+</section>
+
+
+</section>
+<section>
+<section id="sec-12" >
+
+<h2>%run</h2>
+<div class="org-src-container">
+
+<pre  class="src src-python">In [2]: %run test.py
+bangpypers
+</pre>
+</div>
+</section>
+
+
+
+</section>
+<section>
+<section id="sec-13" >
+
+<h2>%edit</h2>
+<div class="org-src-container">
+
+<pre  class="src src-python">In [3]: %edit
+IPython will make a temporary <span style="color: #483d8b;">file</span> named: /tmp/ipython_edit_SLR3Je/ipython_edit_4wRmT3.py
+Editing... done. Executing edited code...
+a
+Out[3]: <span style="color: #8b2252;">"print('a')\n"</span>
+</pre>
+</div>
+</section>
+
+
+
+</section>
+<section>
+<section id="sec-14" >
+
+<h2>%save</h2>
+<div class="org-src-container">
+
+<pre  class="src src-python">In [1]: <span style="color: #a0522d;">x</span> = 1 
+
+In [2]: <span style="color: #a0522d;">y</span> = 2
+
+In [3]: <span style="color: #a020f0;">def</span> <span style="color: #0000ff;">f</span>():
+<span style="background-color: #f2f2f2;"> </span>  ...:     <span style="color: #a020f0;">print</span>(<span style="color: #8b2252;">'a'</span>)
+<span style="background-color: #f2f2f2;"> </span>  ...:     
+
+In [4]: f()
+a
+
+In [5]: %save test.py 1-4
+</pre>
+</div>
+</section>
+
+
+
+</section>
+<section>
+<section id="sec-15" >
+
+<h2>%timeit</h2>
+<div class="org-src-container">
+
+<pre  class="src src-python">In [6]: %timeit <span style="color: #a0522d;">x</span> = 1 + 2
+10000000 loops, best of 3: 52.8 ns per loop
+
+In [7]: %timeit -n 1 <span style="color: #a0522d;">x</span> = 1 + 2
+1 loops, best of 3: 954 ns per loop
+
+In [8]: %timeit -n 1 -r 5 <span style="color: #a0522d;">x</span> = 1 + 2
+1 loops, best of 5: 954 ns per loop
+</pre>
+</div>
+</section>
+
+</section>
+<section>
+<section id="sec-16" >
+
+<h2>%paste</h2>
+<div class="org-src-container">
+
+<pre  class="src src-python">In [11]: %paste
+%timeit -n 1 <span style="color: #a0522d;">x</span> = 1 + 2
+
+<span style="color: #b22222;">## </span><span style="color: #b22222;">-- End pasted text --</span>
+1 loops, best of 3: 954 ns per loop
+</pre>
+</div>
+</section>
+
+
+
+</section>
+<section>
+<section id="sec-17" >
+
+<h2>%pastebin</h2>
+<div class="org-src-container">
+
+<pre  class="src src-python">In [12]: %pastebin 1-12
+Out[12]: u<span style="color: #8b2252;">'https://gist.github.com/570a427bc1735107d70c</span>
+</pre>
+</div>
+</section>
+
+
+
+</section>
+<section>
+<section id="sec-18" >
+
+<h2>Automagics</h2>
+</section>
+
+
+</section>
+<section>
+<section id="sec-19" >
+
+<h2>%autocall</h2>
+<div class="org-src-container">
+
+<pre  class="src src-python">In [14]: <span style="color: #a020f0;">def</span> <span style="color: #0000ff;">add</span>(x, y):
+<span style="background-color: #f2f2f2;"> </span>  ....:     <span style="color: #a020f0;">return</span> x + y
+<span style="background-color: #f2f2f2;"> </span>  ....: 
+
+In [15]: /add 1,2
+Out[15]: 3
+
+In [16]: %autocall
+Automatic calling <span style="color: #a020f0;">is</span>: Smart
+
+In [17]: add 1,2
+-------&gt; add(1,2)
+Out[17]: 3
+</pre>
+</div>
+</section>
+
+
+
+
+</section>
+<section>
+<section id="sec-20" >
+
+<h2>%autoquote</h2>
+<div class="org-src-container">
+
+<pre  class="src src-python">In [18]: <span style="color: #a020f0;">def</span> <span style="color: #0000ff;">foo</span>(s):
+<span style="background-color: #f2f2f2;"> </span>  ....:     <span style="color: #a020f0;">return</span> s
+<span style="background-color: #f2f2f2;"> </span>  ....: 
+
+In [19]: foo(<span style="color: #8b2252;">'bangpypers'</span>)
+Out[19]: <span style="color: #8b2252;">'bangpypers'</span>
+
+In [20]: ,foo bangpypers
+Out[20]: <span style="color: #8b2252;">'bangpypers'</span>
+</pre>
+</div>
+</section>
+
+
+
+</section>
+<section>
+<section id="sec-21" >
+
+<h2>%autoreload</h2>
+<div class="org-src-container">
+
+<pre  class="src src-python">In [24]: <span style="color: #a020f0;">import</span> func
+
+In [25]: func.foo()
+old value
+
+In [26]: %load_ext autoreload
+
+In [27]: %autoreload 2
+
+In [28]: func.foo()
+new value
+</pre>
+</div>
+</section>
+
+
+
+</section>
+<section>
+<section id="sec-22" >
+
+<h2>Profiles</h2>
+<p>
+Create custom profiles
+</p>
+
+<div class="org-src-container">
+
+<pre  class="src src-sh">ipython profile create anand
+
+<span style="color: #b22222;"># </span><span style="color: #b22222;">add config to ~/.ipython/profile_anand/ipython_config.py</span>
+
+ipython --profile=anand
+</pre>
+</div>
+</section>
+
+
+
+</section>
+<section>
+<section id="sec-23" >
+
+<h2>Beyond iPython</h2>
+<p>
+Lint Checking
+</p>
+
+<p>
+Syntax Highlighting
+</p>
+
+<p>
+Auto Completion
+</p>
+
+<div class="org-src-container">
+
+<pre  class="src src-python">pip install ptpython
+
+ptipython
+</pre>
+</div>
+</section>
+
+
+
+</section>
+<section>
+<section id="sec-24" >
+
+<h2>Questions?</h2>
+</section>
+</section>
+</div>
+</div>
+
+<script src="file:///home/anand/.emacs.d/vendor/reveal.js/lib/js/head.min.js"></script>
+<script src="file:///home/anand/.emacs.d/vendor/reveal.js/js/reveal.js"></script>
+
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+controls: true,
+progress: true,
+history: false,
+center: true,
+slideNumber: true,
+rollingLinks: false,
+keyboard: true,
+overview: true,
+
+theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+transition: Reveal.getQueryHash().transition || 'linear', // default/cube/page/concave/zoom/linear/fade/none
+transitionSpeed: 'default',
+multiplex: {
+    secret: '', // null if client
+    id: '', // id, obtained from socket.io server
+    url: '' // Location of socket.io server
+},
+
+// Optional libraries used to extend on reveal.js
+dependencies: [
+ { src: 'file:///home/anand/.emacs.d/vendor/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+ { src: 'file:///home/anand/.emacs.d/vendor/reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+ { src: 'file:///home/anand/.emacs.d/vendor/reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+ { src: 'file:///home/anand/.emacs.d/vendor/reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+ { src: 'file:///home/anand/.emacs.d/vendor/reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+ { src: 'file:///home/anand/.emacs.d/vendor/reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+]
+});
+</script>
+</body>
+</html>

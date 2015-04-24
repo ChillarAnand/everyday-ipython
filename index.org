@@ -1,0 +1,309 @@
+#+AUTHOR: Anand Reddy Pandikunta
+
+#+STARTUP: showall
+
+#+OPTIONS: num:nil
+#+OPTIONS: toc:nil reveal_mathjax:t
+
+#+REVEAL_ROOT: http://cdn.jsdelivr.net/reveal.js/2.5.0/
+#+REVEAL_ROOT: http://cdn.jsdelivr.net/reveal.js/2.5.0/
+#+REVEAL_ROOT: file:///home/anand/.emacs.d/vendor/reveal.js/
+
+#+REVEAL_TRANS: linear
+#+REVEAL-SLIDE-NUMBER: t
+#+REVEAL_THEME: simple
+
+#+BIND: org-confirm-babel-evaluate nil
+
+
+* Enough Ipython For Every Day Programming
+
+
+* Python Interpreter
+
+Meh... Not interesting...
+
+
+
+* iPython 
+
+
+#+BEGIN_SRC sh
+pip install ipython
+sudo apt-get install ipython  # ubuntu
+
+ipython
+#+END_src
+ 
+Welcome to iPython!!
+
+
+
+* Basics
+
+Command Line Help
+
+#+BEGIN_SRC sh
+ipython -h 
+#+END_src
+
+
+Interactive Help: 
+
+#+BEGIN_SRC python
+?
+%quickref
+help()
+object?
+object??
+#+END_src
+
+
+
+* Tab completion
+ 
+#+BEGIN_SRC python
+In [23]: import itertools
+
+In [24]: itertools.
+itertools.chain                          itertools.groupby 
+itertools.combinations                   itertools.ifilter 
+itertools.combinations_with_replacement  itertools.ifilterfalse
+#+END_src
+
+
+
+* Shell Commands
+
+#+BEGIN_SRC python
+In [15]: files = !ls
+
+In [16]: files
+Out[16]: ['demo_script.py', 'ipy', 'ipy.html', 'ipy.org']
+#+END_src
+
+
+
+* Magics
+
+
+
+* History
+
+#+BEGIN_SRC python
+In [25]: 56 * 8903
+Out[25]: 498568
+
+In [26]: _ * 12
+Out[26]: 5982816
+
+In [27]: _ + 1
+Out[27]: 5982817
+
+In [28]: %hist
+#+END_src
+
+
+
+* %lsmagic
+
+#+BEGIN_SRC python
+In [3]: %lsmagic
+Out[3]: 
+Available line magics:
+%aimport  %alias  %alias_magic  %autocall  %autoindent  %automagic
+
+Available cell magics:
+%%!  %%HTML  %%SVG  %%bash  %%capture  %%debug  %%file  %%html 
+
+Automagic is ON, % prefix IS NOT needed for line magics.
+#+END_src
+
+
+
+* %automagic
+
+#+BEGIN_SRC python
+In [4]: %automagic
+
+Automagic is OFF, % prefix IS needed for line magics.
+#+END_src
+
+
+
+* %color
+
+#+BEGIN_SRC python
+In [5]: %colors
+UsageError: %colors: you must specify a color scheme. See '%colors?'
+
+In [6]: %colors lightbg
+#+END_src
+
+
+* %run
+
+#+BEGIN_SRC python
+In [2]: %run test.py
+bangpypers
+#+END_src
+
+
+
+* %edit
+
+
+#+BEGIN_SRC python
+In [3]: %edit
+IPython will make a temporary file named: /tmp/ipython_edit_SLR3Je/ipython_edit_4wRmT3.py
+Editing... done. Executing edited code...
+a
+Out[3]: "print('a')\n"
+#+END_src
+
+
+
+* %save
+
+#+BEGIN_SRC python
+In [1]: x = 1 
+
+In [2]: y = 2
+
+In [3]: def f():
+   ...:     print('a')
+   ...:     
+
+In [4]: f()
+a
+
+In [5]: %save test.py 1-4
+#+END_src
+
+
+
+* %timeit
+
+#+BEGIN_SRC python
+In [6]: %timeit x = 1 + 2
+10000000 loops, best of 3: 52.8 ns per loop
+
+In [7]: %timeit -n 1 x = 1 + 2
+1 loops, best of 3: 954 ns per loop
+
+In [8]: %timeit -n 1 -r 5 x = 1 + 2
+1 loops, best of 5: 954 ns per loop
+#+END_src
+
+* %paste
+
+#+BEGIN_SRC python
+In [11]: %paste
+%timeit -n 1 x = 1 + 2
+
+## -- End pasted text --
+1 loops, best of 3: 954 ns per loop
+#+END_src
+
+
+
+* %pastebin
+
+#+BEGIN_SRC python
+In [12]: %pastebin 1-12
+Out[12]: u'https://gist.github.com/570a427bc1735107d70c
+#+END_src
+
+
+
+* Automagics
+
+
+* %autocall
+
+#+BEGIN_SRC python
+In [14]: def add(x, y):
+   ....:     return x + y
+   ....: 
+
+In [15]: /add 1,2
+Out[15]: 3
+
+In [16]: %autocall
+Automatic calling is: Smart
+
+In [17]: add 1,2
+-------> add(1,2)
+Out[17]: 3
+#+END_src
+
+
+
+
+* %autoquote
+
+#+BEGIN_SRC python
+In [18]: def foo(s):
+   ....:     return s
+   ....: 
+
+In [19]: foo('bangpypers')
+Out[19]: 'bangpypers'
+
+In [20]: ,foo bangpypers
+Out[20]: 'bangpypers'
+#+END_src
+
+
+
+* %autoreload
+
+#+BEGIN_SRC python
+In [24]: import func
+
+In [25]: func.foo()
+old value
+
+In [26]: %load_ext autoreload
+
+In [27]: %autoreload 2
+
+In [28]: func.foo()
+new value
+#+END_src
+
+
+
+* Profiles
+
+
+Create custom profiles
+
+#+BEGIN_SRC sh
+ipython profile create anand
+
+# add config to ~/.ipython/profile_anand/ipython_config.py
+
+ipython --profile=anand
+#+END_src
+
+
+
+* Beyond iPython    
+
+Lint Checking
+
+Syntax Highlighting
+
+Auto Completion
+
+#+BEGIN_SRC python
+pip install ptpython
+
+ptipython
+#+END_src
+
+
+
+* Questions?
+
